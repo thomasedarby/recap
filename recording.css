@@ -1,0 +1,267 @@
+:root {
+  --record-accent: #d23a43;
+  --record-border: rgba(210, 58, 67, 0.18);
+  --record-accent-border: rgba(210, 58, 67, 0.28);
+  --record-ring-1: rgba(210, 58, 67, 0.16);
+  --record-ring-2: rgba(210, 58, 67, 0.12);
+  --record-ring-3: rgba(210, 58, 67, 0.08);
+  --record-ring-4: rgba(210, 58, 67, 0.05);
+  --record-inner-ring: var(--color-background);
+  --record-status-bg: rgba(22, 17, 42, 0.05);
+  --record-status-bg-active: rgba(210, 58, 67, 0.14);
+  --record-status-text: var(--color-text);
+  --record-status-muted: var(--color-muted);
+  --record-status-glow: rgba(210, 58, 67, 0.18);
+}
+
+html[data-theme="dark"] {
+  --record-accent: #f1646c;
+  --record-border: rgba(241, 100, 108, 0.24);
+  --record-accent-border: rgba(241, 100, 108, 0.36);
+  --record-ring-1: rgba(241, 100, 108, 0.32);
+  --record-ring-2: rgba(241, 100, 108, 0.24);
+  --record-ring-3: rgba(241, 100, 108, 0.18);
+  --record-ring-4: rgba(241, 100, 108, 0.12);
+  --record-inner-ring: var(--color-surface);
+  --record-status-bg: rgba(253, 246, 237, 0.05);
+  --record-status-bg-active: rgba(241, 100, 108, 0.18);
+  --record-status-text: var(--color-muted);
+  --record-status-muted: rgba(253, 246, 237, 0.75);
+  --record-status-glow: rgba(241, 100, 108, 0.28);
+}
+
+html[data-theme="dark"] .record-button__glow {
+  background: radial-gradient(circle, rgba(241, 100, 108, 0.36), rgba(241, 100, 108, 0) 78%);
+}
+
+html[data-theme="dark"] .record-button__pulse {
+  border-color: rgba(253, 246, 237, 0.38);
+}
+
+html[data-theme="dark"] .record-button::after {
+  box-shadow:
+    0 0 0 4px rgba(253, 246, 237, 0.28),
+    0 0 0 16px rgba(253, 246, 237, 0.18),
+    0 0 0 30px rgba(253, 246, 237, 0.1);
+}
+
+.recording-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.recording-demo__intro {
+  color: var(--color-muted);
+  max-width: 32rem;
+}
+
+.recording-demo__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.record-button {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--record-accent);
+  color: var(--color-background);
+  font: inherit;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 0 0 10px var(--record-border),
+    0 18px 44px rgba(22, 17, 42, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.4s ease, background-color 0.35s ease, color 0.35s ease;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.record-button:hover {
+  transform: translateY(-6px);
+}
+
+.record-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--record-accent) 60%, white 40%);
+  outline-offset: 6px;
+}
+
+.record-button__glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(210, 58, 67, 0.28), rgba(210, 58, 67, 0) 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.record-button__pulse {
+  position: absolute;
+  inset: 34px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes record-pulse-inner {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.6;
+    border-width: 4px;
+  }
+
+  60% {
+    transform: scale(1.04);
+    opacity: 0.28;
+    border-width: 2px;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+    border-width: 2px;
+  }
+}
+
+.record-button::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.2),
+    0 0 0 16px rgba(255, 255, 255, 0.12),
+    0 0 0 30px rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.record-button__label {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.record-button__label--idle {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  opacity: 1;
+}
+
+.record-button__label--active {
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--color-background);
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+}
+
+.record-button.is-recording {
+  transform: scale(0.84);
+  box-shadow:
+    0 0 0 6px var(--record-inner-ring),
+    0 0 0 14px var(--record-accent-border),
+    0 18px 44px rgba(22, 17, 42, 0.24);
+}
+
+.record-button.is-recording::after {
+  opacity: 1;
+}
+
+.record-button.is-recording .record-button__glow {
+  opacity: 1;
+}
+
+.record-button.is-recording .record-button__pulse {
+  opacity: 1;
+  animation: record-pulse-inner 1.6s ease-in-out infinite;
+}
+
+.record-button.is-recording .record-button__label--idle {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.record-button.is-recording .record-button__label--active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.recording-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 1.1rem;
+  border: 1px solid var(--color-outline);
+  background: var(--record-status-bg);
+  color: var(--record-status-text);
+  min-width: min(340px, 90vw);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.recording-status__icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--record-accent);
+  box-shadow: 0 0 0 6px var(--record-status-glow);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.recording-status__text {
+  flex: 1;
+  text-align: left;
+}
+
+.recording-status.is-recording {
+  background: var(--record-status-bg-active);
+  color: var(--color-text);
+  border-color: transparent;
+}
+
+.recording-status.is-recording .recording-status__icon {
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--record-accent) 35%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .record-button__pulse {
+    animation: none !important;
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 420px) {
+  .record-button {
+    width: 220px;
+    height: 220px;
+  }
+
+  .record-button__label--idle {
+    font-size: 1.35rem;
+  }
+}

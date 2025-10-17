@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Recording · Recap</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="recording.css" />
   </head>
   <body>
     <div class="app-frame">
@@ -153,6 +154,42 @@
             launch to ensure analytics compliance.
           </p>
         </section>
+        <section class="card recording-demo" aria-labelledby="recording-demo-title">
+          <h2 id="recording-demo-title">Try the Recorder</h2>
+          <p class="recording-demo__intro">
+            Use this interaction to see how Recap handles recording states. Click
+            the button to flip between idle and recording and preview the status
+            updates your users will see.
+          </p>
+          <div class="recording-demo__controls">
+            <button
+              id="recButton"
+              class="record-button"
+              aria-pressed="false"
+              aria-label="Start recording"
+            >
+              <span class="record-button__glow" aria-hidden="true"></span>
+              <span class="record-button__pulse" aria-hidden="true"></span>
+              <span class="record-button__label record-button__label--idle">
+                Click to<br />Record
+              </span>
+              <span class="record-button__label record-button__label--active">
+                . REC
+              </span>
+            </button>
+            <div
+              id="recordingStatus"
+              class="recording-status"
+              role="status"
+              aria-live="polite"
+            >
+              <span class="recording-status__icon" aria-hidden="true"></span>
+              <span id="statusText" class="recording-status__text">
+                Recording Not Started
+              </span>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="site-footer">
         <div class="footer-col footer-col--brand">
@@ -216,6 +253,7 @@
         </div>
       </footer>
     </div>
+    <script src="recorder.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
