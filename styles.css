@@ -10,6 +10,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  color: var(--color-text)
 }
 
 img, picture, video, canvas, svg {
@@ -157,11 +158,14 @@ main {
 .btn--primary {
   background-color: var(--color-text);
   color: var(--color-background);
+  text-decoration: none;
 }
 
 .btn--primary:hover {
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-text);
+  text-decoration: underline;
 }
 
 .btn--secondary {
