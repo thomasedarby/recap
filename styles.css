@@ -157,12 +157,11 @@ main {
 .btn--primary {
   background-color: var(--color-text);
   color: var(--color-background);
-  text-decoration: none; 
 }
 
 .btn--primary:hover {
-  background-color: var(--color-text);
-  text-decoration: underline; 
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
 
 .btn--secondary {
