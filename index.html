@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Template</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="site-header">
+        <div class="site-header__bar">
+          <a class="brand" href="index.html" aria-label="Recap home">
+            <img
+              src="images/logo-mark.svg"
+              alt=""
+              class="brand-logo brand-logo--light"
+              width="48"
+              height="48"
+            />
+            <img
+              src="images/logo-mark-light-on-dark.svg"
+              alt=""
+              class="brand-logo brand-logo--dark"
+              width="48"
+              height="48"
+            />
+          </a>
+          <!--
+            The theme toggle button switches between light and dark modes. Its
+            text updates automatically based on the current theme via the
+            accompanying JavaScript (script.js). An aria-label is provided
+            for accessibility.
+          -->
+          <div class="header-actions">
+            <button
+              id="menu-toggle"
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="primary-nav"
+            >
+              <span class="menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="menu-label" data-open="Menu" data-close="Close"
+                >Menu</span
+              >
+            </button>
+            <button
+              id="theme-toggle"
+              class="toggle"
+              aria-label="Switch to Dark Mode"
+            >
+              <span class="sr-only toggle-status">Switch to Dark Mode</span>
+              <span class="toggle-track" aria-hidden="true">
+                <span class="toggle-static">
+                  <span class="icon-sun toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 1v2.2M12 20.8V23M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M1 12h2.2M20.8 12H23M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="icon-moon toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 15.6a8.1 8.1 0 0 1-11.1-11A8.5 8.5 0 1 0 19.5 15.6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span class="toggle-thumb">
+                  <span class="icon-sun toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 1v2.2M12 20.8V23M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M1 12h2.2M20.8 12H23M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="icon-moon toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 15.6a8.1 8.1 0 0 1-11.1-11A8.5 8.5 0 1 0 19.5 15.6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <nav id="primary-nav" class="drawer" hidden>
+          <ul class="drawer-list">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="start-recording.html">Start Recording</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="faqs.html">FAQ's</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="intro">
+          <img
+            src="images/full-logo.svg"
+            alt="Recap logo"
+            class="intro-logo intro-logo--light"
+            width="320"
+            height="128"
+          />
+          <img
+            src="images/full-logo-light.svg"
+            alt="Recap logo"
+            class="intro-logo intro-logo--dark"
+            width="320"
+            height="128"
+          />
+
+          <img src="images/note-taking.jpg" alt="" class="intro-featured" />
+
+          <p class="intro-text">
+            Recap is a simple tool to help you record and organise notes from
+            any form of in-person meeting. Secure, flexible and easy to use,
+            forget having to write your own notes and let recap do it all for
+            you.
+          </p>
+
+          <div class="intro-cta">
+            <a href="start-recording.html" class="btn btn--primary"
+              >Get Started</a
+            >
+            <a href="guides.html" class="btn btn--secondary">Guides</a>
+          </div>
+        </section>
+        <section class="guides">
+          <h2 class="section-title">Getting Started Guides</h2>
+          <p class="guides-text">
+            New to Recap? Don't worry—we've got you covered. Follow these short
+            guides to learn the basics, explore best practices, and start
+            sharing your first recaps with the team.
+          </p>
+          <a href="guides.html" class="btn btn--primary">View Guides</a>
+        </section>
+
+        <section class="faqs">
+          <h2 class="section-title">Faq's</h2>
+          <p class="faqs-text">
+            Have questions about Recap? Check out our Frequently Asked Questions
+            section to find answers to common queries, troubleshooting tips, and
+            helpful information to enhance your experience.
+          </p>
+           <a href="faqs.html" class="btn btn--primary">Visit FAQ's</a>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <div class="footer-col footer-col--brand">
+          <a class="brand" href="index.html" aria-label="Recap home">
+            <img
+              src="images/logo-mark.svg"
+              alt=""
+              class="brand-logo brand-logo--light"
+              width="48"
+              height="48"
+            />
+            <img
+              src="images/logo-mark-light-on-dark.svg"
+              alt=""
+              class="brand-logo brand-logo--dark"
+              width="48"
+              height="48"
+            />
+          </a>
+          <img
+            src="images/dcc%20blk.svg"
+            alt="DCC"
+            class="partner-logo partner-logo--light"
+            width="68"
+            height="32"
+          />
+          <img
+            src="images/dcc%20wht.svg"
+            alt="DCC"
+            class="partner-logo partner-logo--dark"
+            width="68"
+            height="32"
+          />
+        </div>
+        <div class="footer-col footer-col--center">
+          <span>&copy; <span id="footer-year"></span> Recap</span>
+        </div>
+        <div class="footer-col footer-col--credits">
+          <span>Built by Thomas Darby</span>
+          <a
+            href="https://github.com/thomasedarby"
+            class="footer-social"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Thomas Darby on GitHub"
+          >
+            <svg
+              class="footer-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12C0 17.3025 3.43875 21.8 8.205 23.385C8.805 23.4975 9.0225 23.1375 9.0225 22.8225C9.0225 22.5375 9.015 21.6975 9.015 20.8125C6 21.4875 5.22 19.5225 5.22 19.5225C4.68 18.165 3.9 17.8125 3.9 17.8125C2.85 17.0775 3.99 17.0925 3.99 17.0925C5.16 17.175 5.775 18.3 5.775 18.3C6.81 20.055 8.505 19.5525 9.18 19.2375C9.2925 18.465 9.6075 17.94 9.96 17.64C7.26 17.34 4.44 16.29 4.44 11.61C4.44 10.275 4.905 9.2025 5.7 8.3775C5.565 8.0775 5.145 6.825 5.805 5.1225C5.805 5.1225 6.81 4.8075 9.015 6.405C9.975 6.1325 11.01 5.995 12 5.99C12.99 5.995 14.025 6.1325 14.985 6.405C17.19 4.8075 18.195 5.1225 18.195 5.1225C18.855 6.825 18.435 8.0775 18.3 8.3775C19.095 9.2025 19.56 10.275 19.56 11.61C19.56 16.305 16.725 17.3325 14.01 17.625C14.43 17.985 14.82 18.705 14.82 19.8375C14.82 21.45 14.805 22.4625 14.805 22.8225C14.805 23.1375 15.015 23.505 15.63 23.3775C20.4017 21.7977 23.8429 17.2984 23.8429 11.995C23.8429 5.37 18.4729 0 11.8429 0H12Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

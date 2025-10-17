@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Recording · Recap</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="site-header">
+        <div class="site-header__bar">
+          <a class="brand" href="index.html" aria-label="Recap home">
+            <img
+              src="images/logo-mark.svg"
+              alt=""
+              class="brand-logo brand-logo--light"
+              width="48"
+              height="48"
+            />
+            <img
+              src="images/logo-mark-light-on-dark.svg"
+              alt=""
+              class="brand-logo brand-logo--dark"
+              width="48"
+              height="48"
+            />
+          </a>
+          <div class="header-actions">
+            <button
+              id="menu-toggle"
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="primary-nav"
+            >
+              <span class="menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="menu-label" data-open="Menu" data-close="Close">Menu</span>
+            </button>
+            <button
+              id="theme-toggle"
+              class="toggle"
+              aria-label="Switch to Dark Mode"
+            >
+              <span class="sr-only toggle-status">Switch to Dark Mode</span>
+              <span class="toggle-track" aria-hidden="true">
+                <span class="toggle-static">
+                  <span class="icon-sun toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 1v2.2M12 20.8V23M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M1 12h2.2M20.8 12H23M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="icon-moon toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 15.6a8.1 8.1 0 0 1-11.1-11A8.5 8.5 0 1 0 19.5 15.6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span class="toggle-thumb">
+                  <span class="icon-sun toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 1v2.2M12 20.8V23M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M1 12h2.2M20.8 12H23M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="icon-moon toggle-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 15.6a8.1 8.1 0 0 1-11.1-11A8.5 8.5 0 1 0 19.5 15.6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <nav id="primary-nav" class="drawer" hidden>
+          <ul class="drawer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="start-recording.html" aria-current="page">Start Recording</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="faqs.html">FAQ's</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h1>Start Recording</h1>
+        <p>
+          Kick off your first user session recording in minutes. This quickstart
+          walks you through installing the Recap snippet, verifying everything is
+          working, and sharing your first recap with the team.
+        </p>
+        <section class="card" aria-labelledby="setup-heading">
+          <h2 id="setup-heading">Setup Checklist</h2>
+          <p>
+            Confirm you have access to your site’s codebase and update the
+            tracking consent banner. Run through this checklist before the launch
+            to ensure analytics compliance.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
