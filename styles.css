@@ -157,10 +157,12 @@ main {
 .btn--primary {
   background-color: var(--color-text);
   color: var(--color-background);
+  text-decoration: none; 
 }
 
 .btn--primary:hover {
   background-color: var(--color-text);
+  text-decoration: underline; 
 }
 
 .btn--secondary {
@@ -223,7 +225,6 @@ section {
   align-items: center;
   gap: 0.75rem;
   padding: 1.5rem 1.25rem;
-  border-top: 1px solid var(--color-outline);
   font-size: 0.85rem;
   color: var(--color-muted);
 }
@@ -246,8 +247,8 @@ section {
 }
 
 .footer-col--credits {
-  justify-content: flex-end;
-  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .partner-logo {
@@ -258,6 +259,7 @@ section {
 .partner-logo--dark {
   display: none;
 }
+
 
 html[data-theme="dark"] .partner-logo--light {
   display: none;
@@ -270,6 +272,10 @@ html[data-theme="dark"] .partner-logo--dark {
 .footer-social {
   color: inherit;
   display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  text-decoration: none;
 }
 
 .footer-icon {
@@ -279,6 +285,23 @@ html[data-theme="dark"] .partner-logo--dark {
 
 .footer-col a:hover {
   color: var(--color-text);
+}
+
+.footer-credit-name {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer-social:hover .footer-credit-name {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
+  align-self: center;
 }
 
 @media (max-width: 360px) {
@@ -291,6 +314,11 @@ html[data-theme="dark"] .partner-logo--dark {
   .footer-col--brand,
   .footer-col--credits {
     justify-content: center;
+    align-items: center;
+  }
+
+  .footer-social {
+    align-items: center;
   }
 }
 
