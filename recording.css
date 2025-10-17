@@ -85,12 +85,9 @@ html[data-theme="dark"] .record-button::after {
   overflow: hidden;
 }
 
-.record-button:hover {
-  transform: translateY(-6px);
-}
 
 .record-button:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--record-accent) 60%, white 40%);
+  outline: 3px solid color-mix(in srgb, var(--record-accent) 60%, var(--color-background) 40%);
   outline-offset: 6px;
 }
 

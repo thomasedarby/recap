@@ -284,6 +284,7 @@ html[data-theme="dark"] .partner-logo--dark {
 .footer-icon {
   width: 1.25rem;
   height: 1.25rem;
+  align-self: center;
 }
 
 .footer-col a:hover {
@@ -635,14 +636,7 @@ html[data-theme="dark"] .toggle-thumb .icon-moon {
 }
 
 /* Utilities */
-.card {
-  background: var(--color-surface);
-  border-radius: 1.25rem;
-  border: 1px solid var(--color-outline);
-  padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
+
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
