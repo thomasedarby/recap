@@ -162,16 +162,63 @@
               </span>
             </button>
             <div
-              id="recordingStatus"
-              class="recording-status"
-              role="status"
+              id="recordingCard"
+              class="recording-status-card"
+              data-state="idle"
+              role="group"
               aria-live="polite"
             >
-              <span class="recording-status__icon" aria-hidden="true"></span>
-              <span id="statusText" class="recording-status__text">
-                Recording Not Started
-              </span>
+              <div class="recording-status__header">
+                <button
+                  type="button"
+                  id="recordingControl"
+                  class="recording-status__control"
+                  aria-label="Start recording"
+                >
+                  <span class="recording-status__control-icon" aria-hidden="true"></span>
+                </button>
+                <div class="recording-status__meta">
+                  <p id="statusText" class="recording-status__title">
+                    Start a Recording
+                  </p>
+                  <p id="recordingTimestamp" class="recording-status__timestamp">
+                    Loading current time…
+                  </p>
+                </div>
+              </div>
+              <div
+                id="recordingWaveform"
+                class="recording-waveform"
+                aria-hidden="true"
+              ></div>
             </div>
+            <p
+              id="recordingFeedback"
+              class="recording-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <form id="recordingEmailForm" class="recording-email" hidden>
+              <label class="recording-email__field" for="recordingEmail">
+                <span class="sr-only">Send transcript to email address</span>
+                <input
+                  id="recordingEmail"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+              <button type="submit" class="btn btn--primary recording-email__submit">
+                Send transcript
+              </button>
+              <p
+                id="recordingEmailFeedback"
+                class="recording-email__feedback"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
           </div>
         </section>
       </main>
