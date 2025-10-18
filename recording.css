@@ -82,7 +82,7 @@ html[data-theme="dark"] .record-button::after {
 
 .recording-status-card {
   width: min(420px, 90vw);
-  background: var(--record-card-bg);
+  background: var(--color-text);
   color: var(--record-card-label);
   border-radius: 1.6rem;
   padding: 1.4rem 1.5rem;
@@ -114,7 +114,7 @@ html[data-theme="dark"] .record-button::after {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.25s ease, background-color 0.35s ease;
-  color: var(--record-card-label);
+  color: var(--color-background);
 }
 
 .recording-status__control:focus-visible {
@@ -169,6 +169,10 @@ html[data-theme="dark"] .record-button::after {
   transform: translateX(4px);
 }
 
+#statusText, #recordingTimestamp {
+  color: var(--color-background);
+}
+
 .recording-status__meta {
   display: flex;
   flex-direction: column;
@@ -200,6 +204,8 @@ html[data-theme="dark"] .record-button::after {
   justify-content: space-between;
   gap: 4px;
   height: 46px;
+  color: var(--color-background);
+
 }
 
 .recording-waveform__bar {
